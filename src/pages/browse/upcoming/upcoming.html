@@ -1,14 +1,37 @@
 <ion-content padding class="card-background-page">
-    <ion-card>
-        <img src="assets/imgs/cate-small.jpeg"/>
-        <div class="card-title">Cate</div>
-        <div class="card-subtitle">Sorry for what?</div>
-    </ion-card>
-    <ion-card>
-        <img src="assets/imgs/cate-small.jpeg"/>
+    <ion-card *ngFor="let party of parties">
+        <img class="cover" src="{{ party.coverUrl }}"/>
+        <!-- 
         <div class="card-favorite">ATTENTION<ion-icon name="star"></ion-icon></div>
-        <div class="card-title">Event #2</div>
-        <div class="card-subtitle">Next door</div>
+        <div class="card-title">{{ party.title }}</div>
+        <div class="card-subtitle">{{ party.location }}</div>
+        <button ion-button icon-right>
+            Right Icon
+            <ion-icon name="home"></ion-icon>
+        </button> -->
+
+        <div class="card-overlay">
+            <ion-grid>
+                <ion-row>
+                    <ion-col col-8 text-left>
+                        Happening {{ party.start | amTimeAgo }}
+                    </ion-col>
+                    <ion-col>
+                        <ion-icon name="star" float-right></ion-icon>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="row-bottom">
+                    <ion-col text-center>
+                        <ion-avatar item-center>
+                            <ion-img src="{{ party.avatarUrl }}"></ion-img>
+                        </ion-avatar>
+                        <h2>{{ party.title}}</h2>
+                        <small>{{ party.location }}</small>
+                        <div>{{ party.guestlist.length }} people are going.</div>
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </div>
     </ion-card>
 </ion-content>
     

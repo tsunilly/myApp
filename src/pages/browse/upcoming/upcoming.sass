@@ -1,23 +1,47 @@
 .card-background-page 
+    ion-grid
+        height: 100%;
+
+        ion-row.row-bottom
+            position: absolute;
+            bottom: 5%;
+            width: 100%;
+
     ion-card 
         position: relative;
         text-align: center;
-    
+        
+        img.cover
+            height: 200px;
+            object-fit: cover;
+        
+        ion-avatar
+            margin: auto;
 
+
+        .card-overlay
+            position: absolute;
+            top: 0px;
+            left: 0px;
+            height: 100%;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.5);    
+            color: white;
+
+    // old
     .card-title 
         position: absolute;
         top: 36%;
-        font-size: 2.0em;
+        font-size: 2.0rem;
         width: 100%;
         font-weight: bold;
         color: #000;
     
 
     .card-subtitle 
-        font-size: 1.0em;
+        font-size: 1.0rem;
         position: absolute;
         top: 52%;
-        width: 100%;
         color: #000;
     
     .card-favorite
