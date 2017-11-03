@@ -6,9 +6,17 @@ import { NavController } from 'ionic-angular';
   templateUrl: 'about.html'
 })
 export class AboutPage {
-
+  pet = 'puppies';
   constructor(public navCtrl: NavController) {
 
+  }
+
+  getItems(type: string){
+    if (type == 'puppies'){
+      return ['Ruby'];
+    } else {
+      return ['Luna'];
+    }
   }
 
 }

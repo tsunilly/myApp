@@ -14,11 +14,19 @@ import { UpcomingPage } from './upcoming/upcoming';
   templateUrl: 'browse.html',
 })
 export class BrowsePage {
+  pets: string = 'puppies';
   tab1Root = UpcomingPage;
   tab2Root = UpcomingPage;
 
   constructor(public navCtrl: NavController, public navParams: NavParams) {
   }
 
+  getItems(type: string){
+    if (type == 'puppies'){
+      return ['Ruby'];
+    } else {
+      return ['Luna'];
+    }
+  }
 
 }

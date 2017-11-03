@@ -13,9 +13,31 @@
 </ion-header>
 
 
-<ion-content padding>
+<!-- <ion-content padding>
   <ion-tabs tabsPlacement="top">
     <ion-tab [root]="tab1Root" tabTitle="Upcoming"></ion-tab>
     <ion-tab [root]="tab2Root" tabTitle="Trending"></ion-tab>
   </ion-tabs>
+</ion-content> -->
+
+<ion-content>
+  <div>
+    <ion-segment [(ngModel)]="pet">
+      <ion-segment-button value="kittens">
+        Kittens
+      </ion-segment-button>
+      <ion-segment-button value="puppies">
+        Puppies
+      </ion-segment-button>
+    </ion-segment>
+  </div>
+
+  <div>
+    <h4>{{ pet | uppercase }}</h4>
+    <hr>
+    <ion-item *ngFor="let item of getItems(pet)">
+      {{ item }}
+    </ion-item>
+  </div>
 </ion-content>
+
